@@ -50,7 +50,7 @@ pipeline{
             }
             steps {
                 script {
-                    docker.withRegistry("https://registry.hub.docker.com/", "docker-hub") {
+                    docker.withRegistry("https://registry.hub.docker.com/", "dockerHub") {
                         dockerImage.push("$BUILD_NUMBER")
                         dockerImage.push("latest")
                     }
