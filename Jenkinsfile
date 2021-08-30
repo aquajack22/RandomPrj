@@ -8,7 +8,7 @@ pipeline{
         )
     }
     environment {
-        name = 'matthewnicastro/pgpcapstoneproject'
+        name = 'aquajack22/randomprj'
         tag = 'latest'
         dockerImage = ''
         deploy = false
@@ -73,8 +73,8 @@ pipeline{
     }
     post {
         success {
-            sh "docker rmi -f registry.hub.docker.com/matthewnicastro/pgpcapstoneproject:${tag}"
-            sh "docker rmi -f registry.hub.docker.com/matthewnicastro/pgpcapstoneproject:$BUILD_NUMBER"
+            sh "docker rmi -f registry.hub.docker.com/aquajack22/randomprj:${tag}"
+            sh "docker rmi -f registry.hub.docker.com/aquajack22/randomprj:$BUILD_NUMBER"
         }
         failure {
             sh "docker rmi ${name}:${tag}"
